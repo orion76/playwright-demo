@@ -1,0 +1,69 @@
+header:
+  nav:
+    home:
+      by: role
+      role: link
+    products:
+      by: role
+      role: link
+    cart:
+      by: role
+      role: link
+    signupLogin:
+      by: role
+      role: link
+    testCases:
+      by: css
+      selector: "header a[href='/test_cases']"
+    apiTesting:
+      by: role
+      role: link
+    videoTutorials:
+      by: role
+      role: link
+    contactUs:
+      by: role
+      role: link
+    deleteAccount:
+      by: role
+      role: link
+    logout:
+      by: role
+      role: link
+main:
+  hero:
+    title:
+      by: role
+      role: heading
+  featuresItems:
+    title:
+      by: role
+      role: heading
+sidebar:
+  category:
+    title:
+      by: role
+      role: heading
+    women:
+      by: role
+      role: link
+    men:
+      by: role
+      role: link
+    kids:
+      by: role
+      role: link
+  brands:
+    title:
+      by: role
+      role: heading
+footer:
+  subscription:
+    title:
+      by: role
+      role: heading
+    emailInput:
+      by: placeholder
+    subscribeBtn:
+      by: role
+      role: button

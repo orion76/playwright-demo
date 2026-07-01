@@ -1,0 +1,41 @@
+locator_strategies:
+  - data-qa
+  - role
+  - placeholder
+  - label
+  - text
+  - css
+
+languages:
+  - id: en
+    label: English
+    default: true
+
+user_roles:
+  - id: guest
+    description: Not authorized user
+  - id: registered
+    description: Authorized user with persistent account
+test_users:
+  persistent:
+    email: 'persistent_test@test.com'
+    password: 'PersistentPass1!'
+    description: 'Постоянный тестовый пользователь (не удаляется)'
+    roles: [registered]
+    cookie_file: auth/persistent-user.json
+  logout_user:
+    email: 'logout_test_user@test.com'
+    password: 'LogoutPass123!'
+    description: 'Пользователь для тестов logout (не удаляется)'
+    roles: [registered]
+viewports:
+  desktop:
+    width: 1440
+    height: 900
+    default: true
+  mobile:
+    width: 375
+    height: 812
+  tablet:
+    width: 768
+    height: 1024

@@ -1,0 +1,27 @@
+main:
+  signupForm:
+    title:
+      by: role
+      role: heading
+    nameInput:
+      by: css
+      selector: "input[data-qa='signup-name']"
+    emailInput:
+      by: css
+      selector: "input[data-qa='signup-email']"
+    signupBtn:
+      by: css
+      selector: "button[data-qa='signup-button']"
+  loginForm:
+    title:
+      by: role
+      role: heading
+    emailInput:
+      by: css
+      selector: "input[data-qa='login-email']"
+    passwordInput:
+      by: css
+      selector: "input[data-qa='login-password']"
+    loginBtn:
+      by: css
+      selector: "button[data-qa='login-button']"

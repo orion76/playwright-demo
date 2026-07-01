@@ -1,0 +1,98 @@
+name: "Home"
+regions:
+  - name: header
+    blocks:
+      - type: menu
+        name: nav
+        title:
+          type: getByRole
+          value: "link, { name: 'Website for practice automation' }"
+        fields:
+          - name: home
+            locator:
+              type: getByRole
+              value: "link, { name: 'Home' }"
+          - name: products
+            locator:
+              type: getByRole
+              value: "link, { name: 'Products' }"
+          - name: cart
+            locator:
+              type: getByRole
+              value: "link, { name: 'Cart' }"
+          - name: signupLogin
+            locator:
+              type: getByRole
+              value: "link, { name: 'Signup / Login' }"
+          - name: testCases
+            locator:
+              type: getByRole
+              value: "link, { name: 'Test Cases' }"
+          - name: apiTesting
+            locator:
+              type: getByRole
+              value: "link, { name: 'API Testing' }"
+          - name: videoTutorials
+            locator:
+              type: getByRole
+              value: "link, { name: 'Video Tutorials' }"
+          - name: contactUs
+            locator:
+              type: getByRole
+              value: "link, { name: 'Contact us' }"
+  - name: main
+    blocks:
+      - type: card
+        name: hero
+        title:
+          type: getByRole
+          value: "heading, { name: 'AutomationExercise' }"
+        content:
+          type: getByText
+          value: "Full-Fledged practice website for Automation Engineers"
+      - type: card
+        name: featuresItems
+        title:
+          type: getByRole
+          value: "heading, { name: 'Features Items' }"
+  - name: sidebar
+    blocks:
+      - type: menu
+        name: category
+        title:
+          type: getByRole
+          value: "heading, { name: 'Category' }"
+        fields:
+          - name: women
+            locator:
+              type: getByRole
+              value: "link, { name: 'Women' }"
+          - name: men
+            locator:
+              type: getByRole
+              value: "link, { name: 'Men' }"
+          - name: kids
+            locator:
+              type: getByRole
+              value: "link, { name: 'Kids' }"
+      - type: menu
+        name: brands
+        title:
+          type: getByRole
+          value: "heading, { name: 'Brands' }"
+  - name: footer
+    blocks:
+      - type: form
+        name: subscription
+        title:
+          type: getByRole
+          value: "heading, { name: 'Subscription' }"
+        fields:
+          - name: emailInput
+            locator:
+              type: getByPlaceholder
+              value: "Your email address"
+          - name: subscribeBtn
+            locator:
+              type: getByRole
+              value: "button, { name: '' }"

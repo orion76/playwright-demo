@@ -1,0 +1,4 @@
+add-review:
+  status: base_test_generated
+verify-product-detail:
+  status: base_test_generated

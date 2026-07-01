@@ -1,0 +1,11 @@
+main:
+  signupForm:
+    nameInput: { en: "Name", he: "Name" }
+    emailInput: { en: "Email Address", he: "Email Address" }
+    signupBtn: { en: "Signup", he: "Signup" }
+    title: { en: "New User Signup!", he: "New User Signup!" }
+  loginForm:
+    title: { en: "Login to your account", he: "Login to your account" }
+    emailInput: { en: "Email Address", he: "Email Address" }
+    passwordInput: { en: "Password", he: "Password" }
+    loginBtn: { en: "Login", he: "Login" }

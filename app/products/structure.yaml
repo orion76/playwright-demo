@@ -1,0 +1,20 @@
+name: "All Products"
+regions:
+  - name: main
+    blocks:
+      - type: form
+        name: search
+        fields:
+          - name: searchInput
+            locator:
+              type: getByPlaceholder
+              value: "Search Product"
+          - name: searchBtn
+            locator:
+              type: getByRole
+              value: "button, { name: '' }"
+      - type: card
+        name: productList
+        title:
+          type: getByRole
+          value: "heading, { name: 'All Products' }"

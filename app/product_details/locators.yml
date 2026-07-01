@@ -1,0 +1,30 @@
+main:
+  productInfo:
+    productName:
+      by: role
+      role: heading
+    category:
+      by: text
+    price:
+      by: text
+    availability:
+      by: text
+    condition:
+      by: text
+    brand:
+      by: text
+    addToCartBtn:
+      by: role
+      role: button
+  review:
+    title:
+      by: text
+    nameInput:
+      by: placeholder
+    emailInput:
+      by: placeholder
+    reviewInput:
+      by: placeholder
+    submitBtn:
+      by: role
+      role: button

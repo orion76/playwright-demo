@@ -1,0 +1,25 @@
+main:
+  accountInfo:
+    titleMr: { en: "Mr.", he: "Mr." }
+    titleMrs: { en: "Mrs.", he: "Mrs." }
+    nameInput: { en: "Name", he: "Name" }
+    emailInput: { en: "Email", he: "Email" }
+    passwordInput: { en: "Password", he: "Password" }
+    daySelect: { en: "days", he: "days" }
+    monthSelect: { en: "months", he: "months" }
+    yearSelect: { en: "years", he: "years" }
+    newsletterCheckbox: { en: "Sign up for our newsletter!", he: "Sign up for our newsletter!" }
+    offersCheckbox: { en: "Receive special offers from our partners!", he: "Receive special offers from our partners!" }
+    title: { en: "Enter Account Information", he: "Enter Account Information" }
+  addressInfo:
+    firstNameInput: { en: "First name *", he: "First name *" }
+    lastNameInput: { en: "Last name *", he: "Last name *" }
+    companyInput: { en: "Company", he: "Company" }
+    addressInput: { en: "Address * (Street address, P.O. Box, Company name, etc.)", he: "Address * (Street address, P.O. Box, Company name, etc.)" }
+    address2Input: { en: "Address 2", he: "Address 2" }
+    countrySelect: { en: "Country *", he: "Country *" }
+    stateInput: { en: "State *", he: "State *" }
+    cityInput: { en: "City * Zipcode *", he: "City * Zipcode *" }
+    zipcodeInput: { en: "Zipcode *", he: "Zipcode *" }
+    mobileInput: { en: "Mobile Number *", he: "Mobile Number *" }
+    createAccountBtn: { en: "Create Account", he: "Create Account" }

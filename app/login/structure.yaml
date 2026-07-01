@@ -1,0 +1,40 @@
+name: "Signup / Login"
+regions:
+  - name: main
+    blocks:
+      - type: form
+        name: loginForm
+        title:
+          type: getByRole
+          value: "heading, { name: 'Login to your account' }"
+        fields:
+          - name: emailInput
+            locator:
+              type: getByPlaceholder
+              value: "Email Address"
+          - name: passwordInput
+            locator:
+              type: getByPlaceholder
+              value: "Password"
+          - name: loginBtn
+            locator:
+              type: getByRole
+              value: "button, { name: 'Login' }"
+      - type: form
+        name: signupForm
+        title:
+          type: getByRole
+          value: "heading, { name: 'New User Signup!' }"
+        fields:
+          - name: nameInput
+            locator:
+              type: getByPlaceholder
+              value: "Name"
+          - name: emailInput
+            locator:
+              type: getByPlaceholder
+              value: "Email Address"
+          - name: signupBtn
+            locator:
+              type: getByRole
+              value: "button, { name: 'Signup' }"

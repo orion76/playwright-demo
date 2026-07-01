@@ -1,0 +1,8 @@
+main:
+  cartContent:
+    checkoutBtn:
+      by: role
+      role: link
+    emptyCartLink:
+      by: role
+      role: link

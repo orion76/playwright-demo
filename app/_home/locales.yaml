@@ -1,0 +1,20 @@
+header:
+  nav:
+    home: { en: "Home", he: "Home" }
+    products: { en: "Products", he: "Products" }
+    cart: { en: "Cart", he: "Cart" }
+    signupLogin: { en: "Signup / Login", he: "Signup / Login" }
+    testCases: { en: "Test Cases", he: "Test Cases" }
+    apiTesting: { en: "API Testing", he: "API Testing" }
+    videoTutorials: { en: "Video Tutorials", he: "Video Tutorials" }
+    contactUs: { en: "Contact us", he: "Contact us" }
+    logout: { en: "Logout", he: "Logout" }
+    deleteAccount: { en: "Delete Account", he: "Delete Account" }
+main:
+  hero:
+    title: { en: "AutomationExercise", he: "AutomationExercise" }
+footer:
+  subscription:
+    title: { en: "Subscription", he: "Subscription" }
+    emailInput: { en: "Your email address", he: "Your email address" }
+    subscribeBtn: { en: "", he: "" }

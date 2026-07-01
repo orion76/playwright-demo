@@ -1,0 +1,8 @@
+login-correct:
+  status: base_test_generated
+login-incorrect:
+  status: base_test_generated
+logout:
+  status: planned
+register-existing-email:
+  status: base_test_generated

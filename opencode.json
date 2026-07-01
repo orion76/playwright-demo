@@ -1,0 +1,38 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "playwright": {
+      "type": "local",
+      "command": [
+        "npx",
+        "playwright-mcp"
+      ],
+      "enabled": true
+    }
+  },
+  "lsp": {
+    "typescript": {
+      "command": [
+        "npx",
+        "-y",
+        "typescript-language-server",
+        "--stdio"
+      ],
+      "extensions": [
+        "ts",
+        "tsx"
+      ]
+    }
+  },
+  "instructions": [
+    ".opencode/rules/hard-rules.md"
+  ],
+  "skills": {
+    "paths": [
+      ".opencode/skills",
+      "/home/pasha/.config/opencode/profiles/typescript/skills/typescript-codegen",
+      "/home/pasha/.config/opencode/profiles/playwright/skills/playwright-test-base"
+    ]
+  },
+  "plugin": []
+}

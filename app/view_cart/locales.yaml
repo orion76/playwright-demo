@@ -1,0 +1,4 @@
+main:
+  cartContent:
+    checkoutBtn: { en: "Proceed To Checkout", he: "Proceed To Checkout" }
+    emptyCartLink: { en: "here", he: "here" }

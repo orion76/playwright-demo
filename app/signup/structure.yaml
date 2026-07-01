@@ -1,0 +1,100 @@
+name: "Signup — Enter Account Information"
+regions:
+  - name: main
+    blocks:
+      - type: form
+        name: accountInfo
+        title:
+          type: getByRole
+          value: "heading, { name: 'Enter Account Information' }"
+        fields:
+          - name: titleMr
+            locator:
+              type: getByRole
+              value: "radio, { name: 'Mr.' }"
+          - name: titleMrs
+            locator:
+              type: getByRole
+              value: "radio, { name: 'Mrs.' }"
+          - name: nameInput
+            locator:
+              type: getByRole
+              value: "textbox, { name: 'Name' }"
+          - name: emailInput
+            locator:
+              type: getByRole
+              value: "textbox, { name: 'Email' }"
+          - name: passwordInput
+            locator:
+              type: getByRole
+              value: "textbox, { name: 'Password' }"
+          - name: daySelect
+            locator:
+              type: getByRole
+              value: "combobox, { name: 'days' }"
+          - name: monthSelect
+            locator:
+              type: getByRole
+              value: "combobox, { name: 'months' }"
+          - name: yearSelect
+            locator:
+              type: getByRole
+              value: "combobox, { name: 'years' }"
+          - name: newsletterCheckbox
+            locator:
+              type: getByRole
+              value: "checkbox, { name: 'Sign up for our newsletter!' }"
+          - name: offersCheckbox
+            locator:
+              type: getByRole
+              value: "checkbox, { name: 'Receive special offers from our partners!' }"
+      - type: form
+        name: addressInfo
+        title:
+          type: getByRole
+          value: "heading, { name: 'Address Information' }"
+        fields:
+          - name: firstNameInput
+            locator:
+              type: getByRole
+              value: "textbox, { name: 'First name' }"
+          - name: lastNameInput
+            locator:
+              type: getByRole
+              value: "textbox, { name: 'Last name' }"
+          - name: companyInput
+            locator:
+              type: getByPlaceholder
+              value: "Company"
+          - name: addressInput
+            locator:
+              type: getByRole
+              value: "textbox, { name: 'Address' }"
+          - name: address2Input
+            locator:
+              type: getByPlaceholder
+              value: "Address 2"
+          - name: countrySelect
+            locator:
+              type: getByRole
+              value: "combobox, { name: 'Country' }"
+          - name: stateInput
+            locator:
+              type: getByRole
+              value: "textbox, { name: 'State' }"
+          - name: cityInput
+            locator:
+              type: getByRole
+              value: "textbox, { name: 'City' }"
+          - name: zipcodeInput
+            locator:
+              type: getByRole
+              value: "textbox, { name: 'Zipcode' }"
+          - name: mobileInput
+            locator:
+              type: getByRole
+              value: "textbox, { name: 'Mobile Number' }"
+          - name: createAccountBtn
+            locator:
+              type: getByRole
+              value: "button, { name: 'Create Account' }"

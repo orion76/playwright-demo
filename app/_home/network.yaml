@@ -1,0 +1,5 @@
+requests:
+  - url: "/"
+    method: GET
+    status: 200
+    type: document

@@ -1,0 +1,34 @@
+name: "Payment"
+regions:
+  - name: main
+    blocks:
+      - type: form
+        name: paymentForm
+        title:
+          type: getByRole
+          value: "heading, { name: 'Payment' }"
+        fields:
+          - name: nameOnCard
+            locator:
+              type: getByRole
+              value: "textbox, { name: 'Name on Card' }"
+          - name: cardNumber
+            locator:
+              type: getByRole
+              value: "textbox, { name: 'Card Number' }"
+          - name: cvc
+            locator:
+              type: getByRole
+              value: "textbox, { name: 'CVC' }"
+          - name: expirationMonth
+            locator:
+              type: getByRole
+              value: "textbox, { name: 'Expiration month' }"
+          - name: expirationYear
+            locator:
+              type: getByRole
+              value: "textbox, { name: 'Expiration year' }"
+          - name: payBtn
+            locator:
+              type: getByRole
+              value: "button, { name: 'Pay and Confirm Order' }"

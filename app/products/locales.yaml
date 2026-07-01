@@ -1,0 +1,5 @@
+main:
+  search:
+    searchInput: { en: "Search Product", he: "Search Product" }
+  productList:
+    title: { en: "All Products", he: "All Products" }

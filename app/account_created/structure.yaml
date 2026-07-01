@@ -1,0 +1,17 @@
+name: "Account Created"
+regions:
+  - name: main
+    blocks:
+      - type: card
+        name: success
+        title:
+          type: getByRole
+          value: "heading, { name: 'Account Created!' }"
+        content:
+          type: getByText
+          value: "Congratulations! Your new account has been successfully created!"
+        fields:
+          - name: continueBtn
+            locator:
+              type: getByRole
+              value: "link, { name: 'Continue' }"

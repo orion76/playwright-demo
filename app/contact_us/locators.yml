@@ -1,0 +1,20 @@
+main:
+  contactForm:
+    title:
+      by: role
+      role: heading
+    nameInput:
+      by: css
+      selector: "#contact-us-form input[placeholder='Name']"
+    emailInput:
+      by: css
+      selector: "#contact-us-form input[placeholder='Email']"
+    subjectInput:
+      by: css
+      selector: "#contact-us-form input[placeholder='Subject']"
+    messageInput:
+      by: css
+      selector: "#contact-us-form textarea[placeholder='Your Message Here']"
+    submitBtn:
+      by: css
+      selector: "#contact-us-form input[type='submit']"

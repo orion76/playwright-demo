@@ -1,0 +1,9 @@
+name: "Test Cases"
+regions:
+  - name: main
+    blocks:
+      - type: menu
+        name: testCaseList
+        title:
+          type: getByRole
+          value: "heading, { name: 'Test Cases' }"

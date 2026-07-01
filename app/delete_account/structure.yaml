@@ -1,0 +1,17 @@
+name: "Account Deleted"
+regions:
+  - name: main
+    blocks:
+      - type: card
+        name: success
+        title:
+          type: getByRole
+          value: "heading, { name: 'Account Deleted!' }"
+        content:
+          type: getByText
+          value: "Your account has been permanently deleted!"
+        fields:
+          - name: continueBtn
+            locator:
+              type: getByRole
+              value: "link, { name: 'Continue' }"

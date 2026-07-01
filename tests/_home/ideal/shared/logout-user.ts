@@ -1,0 +1,27 @@
+import { Page, expect } from "@playwright/test";
+import { initPage } from "@src/pages/init";
+import { getEmail, getPassword } from "@src/auth";
+import type { UViewport } from "@src/types";
+
+export interface ScenarioOpts {
+  viewport: UViewport;
+  role: string;
+  lang: string;
+}
+
+export async function testLogoutUser(page: Page, opts: ScenarioOpts) {
+  const loginPage = initPage(page, "login", opts.viewport);
+  await loginPage.navigate();
+  await expect(loginPage.region("main").block("loginForm").element("title")).toBeVisible();
+
+  const form = loginPage.region("main").block("loginForm");
+  await form.element("emailInput").fill(getEmail("logout_user"));
+  await form.element("passwordInput").fill(getPassword("logout_user"));
+  await form.element("loginBtn").click();
+  await page.waitForURL("**/");
+
+  const home = initPage(page, "_home", opts.viewport);
+  await expect(page.getByText("Logged in as")).toBeVisible();
+  await home.region("header").block("nav").element("logout").click();
+  await page.waitForURL("**/login");
+}

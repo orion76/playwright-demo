@@ -1,0 +1,4 @@
+search-product:
+  status: base_test_generated
+verify-all-products:
+  status: base_test_generated

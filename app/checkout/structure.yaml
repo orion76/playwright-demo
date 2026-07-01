@@ -1,0 +1,25 @@
+name: "Checkout"
+regions:
+  - name: main
+    blocks:
+      - type: card
+        name: addressDetails
+        title:
+          type: getByRole
+          value: "heading, { name: 'Address Details' }"
+      - type: card
+        name: reviewOrder
+        title:
+          type: getByRole
+          value: "heading, { name: 'Review Your Order' }"
+      - type: form
+        name: comment
+        fields:
+          - name: commentInput
+            locator:
+              type: getByRole
+              value: "textbox, { name: '' }"
+          - name: placeOrderBtn
+            locator:
+              type: getByRole
+              value: "link, { name: 'Place Order' }"

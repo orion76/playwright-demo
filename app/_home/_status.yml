@@ -1,0 +1,8 @@
+register-user:
+  status: base_test_generated
+subscription:
+  status: base_test_generated
+test-cases-navigation:
+  status: base_test_generated
+logout-user:
+  status: base_test_generated

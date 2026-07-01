@@ -1,0 +1,34 @@
+name: "Contact Us"
+regions:
+  - name: main
+    blocks:
+      - type: form
+        name: contactForm
+        title:
+          type: getByRole
+          value: "heading, { name: 'Get In Touch' }"
+        fields:
+          - name: nameInput
+            locator:
+              type: getByRole
+              value: "textbox, { name: 'Name' }"
+          - name: emailInput
+            locator:
+              type: getByRole
+              value: "textbox, { name: 'Email' }"
+          - name: subjectInput
+            locator:
+              type: getByRole
+              value: "textbox, { name: 'Subject' }"
+          - name: messageInput
+            locator:
+              type: getByRole
+              value: "textbox, { name: 'Your Message Here' }"
+          - name: fileInput
+            locator:
+              type: getByRole
+              value: "button, { name: 'Choose File' }"
+          - name: submitBtn
+            locator:
+              type: getByRole
+              value: "button, { name: 'Submit' }"

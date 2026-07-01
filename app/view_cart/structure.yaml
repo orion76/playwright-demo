@@ -1,0 +1,19 @@
+name: "Shopping Cart"
+regions:
+  - name: main
+    blocks:
+      - type: card
+        name: cartContent
+        fields:
+          - name: checkoutBtn
+            locator:
+              type: getByRole
+              value: "link, { name: 'Proceed To Checkout' }"
+          - name: registerLoginBtn
+            locator:
+              type: getByRole
+              value: "link, { name: 'Register / Login' }"
+          - name: emptyCartLink
+            locator:
+              type: getByRole
+              value: "link, { name: 'here' }"

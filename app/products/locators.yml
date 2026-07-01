@@ -1,0 +1,12 @@
+main:
+  search:
+    searchInput:
+      by: css
+      selector: "#search_product"
+    searchBtn:
+      by: css
+      selector: "#submit_search"
+  productList:
+    title:
+      by: role
+      role: heading

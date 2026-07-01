@@ -1,0 +1,61 @@
+name: "Product Details"
+regions:
+  - name: main
+    blocks:
+      - type: card
+        name: productInfo
+        fields:
+          - name: productName
+            locator:
+              type: getByRole
+              value: "heading, { name: 'Blue Top' }"
+          - name: category
+            locator:
+              type: getByText
+              value: "Category: Women > Tops"
+          - name: price
+            locator:
+              type: getByText
+              value: "Rs. 500"
+          - name: availability
+            locator:
+              type: getByText
+              value: "Availability:"
+          - name: condition
+            locator:
+              type: getByText
+              value: "Condition:"
+          - name: brand
+            locator:
+              type: getByText
+              value: "Brand:"
+          - name: quantityInput
+            locator:
+              type: getByRole
+              value: "textbox"
+          - name: addToCartBtn
+            locator:
+              type: getByRole
+              value: "button, { name: 'Add to cart' }"
+      - type: form
+        name: review
+        title:
+          type: getByText
+          value: "Write Your Review"
+        fields:
+          - name: nameInput
+            locator:
+              type: getByPlaceholder
+              value: "Your Name"
+          - name: emailInput
+            locator:
+              type: getByPlaceholder
+              value: "Email Address"
+          - name: reviewInput
+            locator:
+              type: getByPlaceholder
+              value: "Add Review Here!"
+          - name: submitBtn
+            locator:
+              type: getByRole
+              value: "button, { name: 'Submit' }"

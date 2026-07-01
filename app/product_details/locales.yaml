@@ -1,0 +1,15 @@
+main:
+  productInfo:
+    productName: { en: "Blue Top", he: "Blue Top" }
+    category: { en: "Category: Women > Tops", he: "Category: Women > Tops" }
+    price: { en: "Rs.", he: "Rs." }
+    availability: { en: "Availability:", he: "Availability:" }
+    condition: { en: "Condition:", he: "Condition:" }
+    brand: { en: "Brand:", he: "Brand:" }
+    addToCartBtn: { en: "Add to cart", he: "Add to cart" }
+  review:
+    title: { en: "Write Your Review", he: "Write Your Review" }
+    nameInput: { en: "Your Name", he: "Your Name" }
+    emailInput: { en: "Email Address", he: "Email Address" }
+    reviewInput: { en: "Add Review Here!", he: "Add Review Here!" }
+    submitBtn: { en: "Submit", he: "Submit" }

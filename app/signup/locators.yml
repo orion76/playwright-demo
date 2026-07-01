@@ -1,0 +1,72 @@
+main:
+  accountInfo:
+    title:
+      by: role
+      role: heading
+    titleMr:
+      by: role
+      role: radio
+    titleMrs:
+      by: role
+      role: radio
+    nameInput:
+      by: css
+      selector: "input[data-qa='name']"
+    emailInput:
+      by: css
+      selector: "input[data-qa='email']"
+    passwordInput:
+      by: css
+      selector: "input[data-qa='password']"
+    daySelect:
+      by: css
+      selector: "select[data-qa='days']"
+    monthSelect:
+      by: css
+      selector: "select[data-qa='months']"
+    yearSelect:
+      by: css
+      selector: "select[data-qa='years']"
+    newsletterCheckbox:
+      by: role
+      role: checkbox
+    offersCheckbox:
+      by: role
+      role: checkbox
+  addressInfo:
+    title:
+      by: role
+      role: heading
+    firstNameInput:
+      by: css
+      selector: "input[data-qa='first_name']"
+    lastNameInput:
+      by: css
+      selector: "input[data-qa='last_name']"
+    companyInput:
+      by: css
+      selector: "input[data-qa='company']"
+    addressInput:
+      by: css
+      selector: "input[data-qa='address']"
+    address2Input:
+      by: css
+      selector: "input[data-qa='address2']"
+    countrySelect:
+      by: css
+      selector: "select[data-qa='country']"
+    stateInput:
+      by: css
+      selector: "input[data-qa='state']"
+    cityInput:
+      by: css
+      selector: "input[data-qa='city']"
+    zipcodeInput:
+      by: css
+      selector: "input[data-qa='zipcode']"
+    mobileInput:
+      by: css
+      selector: "input[data-qa='mobile_number']"
+    createAccountBtn:
+      by: css
+      selector: "button[data-qa='create-account']"

@@ -1,0 +1,8 @@
+main:
+  success:
+    title:
+      by: role
+      role: heading
+    continueBtn:
+      by: role
+      role: link

@@ -1,6 +1,7 @@
-import { test } from "@playwright/test";
+import { test, VIEWPORTS } from "@src/fixtures/test";
 import { testPlaceOrderRegisterBeforeCheckout } from "./shared/place-order-register-before-checkout";
 
+test.use({ viewport: VIEWPORTS.desktop });
 test("SPEC: login — Place Order: Register before Checkout", async ({ page }) => {
   test.info().annotations.push(
     { type: "feature", description: "Checkout" },

@@ -1,6 +1,7 @@
-import { test } from "@playwright/test";
+import { test, VIEWPORTS } from "@src/fixtures/test";
 import { testVerifyAllProducts } from "./shared/verify-all-products";
 
+test.use({ viewport: VIEWPORTS.desktop });
 test("SPEC: products — Verify All Products", async ({ page }) => {
   test.info().annotations.push(
     { type: "feature", description: "Products" },

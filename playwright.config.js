@@ -19,22 +19,8 @@ module.exports = defineConfig({
   ],
   use: {
     headless: true,
-    viewport: { width: 1920, height: 1080 },
+    viewport: { width: 1440, height: 900 },
     video: 'on',
     launchOptions,
   },
-  projects: [
-    {
-      name: 'desktop',
-      use: { viewport: { width: 1920, height: 1080 } },
-    },
-    {
-      name: 'mobile',
-      use: { viewport: { width: 375, height: 812 } },
-    },
-    {
-      name: 'spec',
-      use: { viewport: { width: 1920, height: 1080 } },
-    },
-  ],
 });

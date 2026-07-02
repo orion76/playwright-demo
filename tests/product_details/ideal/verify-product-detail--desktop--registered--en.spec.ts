@@ -1,6 +1,7 @@
-import { test } from "@playwright/test";
+import { test, VIEWPORTS } from "@src/fixtures/test";
 import { testVerifyProductDetail } from "./shared/verify-product-detail";
 
+test.use({ viewport: VIEWPORTS.desktop });
 test.use({ storageState: "auth/persistent-user.json" });
 
 test("SPEC: test", async ({ page }) => {

@@ -1,6 +1,7 @@
-import { test } from "@playwright/test";
+import { test, VIEWPORTS } from "@src/fixtures/test";
 import { testLoginCorrect } from "./shared/login-correct";
 
+test.use({ viewport: VIEWPORTS.desktop });
 test("SPEC: login — Login correct credentials", async ({ page }) => {
   test.info().annotations.push(
     { type: "feature", description: "User Login" },

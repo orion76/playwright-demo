@@ -1,6 +1,7 @@
-import { test } from "@playwright/test";
+import { test, VIEWPORTS } from "@src/fixtures/test";
 import { testLoginExistingEmail } from "./shared/login-existing-email";
 
+test.use({ viewport: VIEWPORTS.desktop });
 test("SPEC: login — Register with existing email", async ({ page }) => {
   test.info().annotations.push(
     { type: "feature", description: "User Registration" },

@@ -1,6 +1,7 @@
-import { test } from "@playwright/test";
+import { test, VIEWPORTS } from "@src/fixtures/test";
 import { testAddProductsInCart } from "./shared/add-products-in-cart";
 
+test.use({ viewport: VIEWPORTS.desktop });
 test("SPEC: products — Add Products in Cart", async ({ page }) => {
   test.info().annotations.push(
     { type: "feature", description: "Products" },

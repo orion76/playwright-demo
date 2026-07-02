@@ -1,6 +1,7 @@
-import { test } from "@playwright/test";
+import { test, VIEWPORTS } from "@src/fixtures/test";
 import { testTestCasesNavigation } from "./shared/test-cases-navigation";
 
+test.use({ viewport: VIEWPORTS.desktop });
 test("SPEC: / — Test Cases Navigation", async ({ page }) => {
   test.info().annotations.push(
     { type: "feature", description: "Home" },

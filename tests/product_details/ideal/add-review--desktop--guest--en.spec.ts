@@ -1,6 +1,7 @@
-import { test } from "@playwright/test";
+import { test, VIEWPORTS } from "@src/fixtures/test";
 import { testAddReview } from "./shared/add-review";
 
+test.use({ viewport: VIEWPORTS.desktop });
 test("SPEC: product_details — Add Review", async ({ page }) => {
   test.info().annotations.push(
     { type: "feature", description: "Product Details" },

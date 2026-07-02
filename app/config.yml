@@ -31,6 +31,10 @@ test_users:
     password: 'LogoutPass123!'
     description: 'Пользователь для тестов logout (не удаляется)'
     roles: [registered]
+test_plugins:
+  connectivity: true
+  trace: false
+
 viewports:
   desktop:
     width: 1440

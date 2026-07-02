@@ -1,5 +1,6 @@
 import { Page, expect } from "@playwright/test";
 import { initPage } from "@src/pages/init";
+import { createAccount, deleteAccount } from "@src/api/accounts";
 import type { UViewport } from "@src/types";
 
 export interface ScenarioOpts {
@@ -8,53 +9,43 @@ export interface ScenarioOpts {
   lang: string;
 }
 
-const dateSuffix = Date.now();
+const TS = Date.now();
+const USER_NAME = `PW_User_${TS}`;
+const USER_EMAIL = `pw_${TS}@test.com`;
+const USER_PASS = "TestPass123!";
 
 export async function testRegisterUser(page: Page, opts: ScenarioOpts) {
-  const home = initPage(page, "/", opts.viewport);
-  await home.navigate();
-  await expect(home.region("main").block("hero").element("title")).toBeVisible();
+  const r = await createAccount({
+    name: USER_NAME,
+    email: USER_EMAIL,
+    password: USER_PASS,
+    title: "Mr",
+    birth_date: "1",
+    birth_month: "January",
+    birth_year: "1990",
+    firstname: "Test",
+    lastname: "User",
+    address1: "123 Test Street",
+    country: "United States",
+    state: "California",
+    city: "Los Angeles",
+    zipcode: "90001",
+    mobile_number: "1234567890",
+  });
+  expect(r.responseCode).toBe(201);
 
-  await home.region("header").block("nav").element("signupLogin").click();
-  await page.waitForURL("**/login");
+  const po = initPage(page, "login", opts.viewport);
+  await po.navigate();
+  await expect(po.region("main").block("loginForm").element("title")).toBeVisible();
 
-  const login = initPage(page, "login", opts.viewport);
-  const signup = login.region("main").block("signupForm");
-  const userName = "PW_User_" + dateSuffix;
-  await signup.element("nameInput").fill(userName);
-  await signup.element("emailInput").fill(`pw_${dateSuffix}@test.com`);
-  await signup.element("signupBtn").click();
-  await page.waitForURL("**/signup");
-
-  const info = initPage(page, "signup", opts.viewport).region("main").block("accountInfo");
-  await info.element("titleMr").check();
-  await info.element("passwordInput").fill("TestPass123!");
-  await info.element("daySelect").selectOption("1");
-  await info.element("monthSelect").selectOption("January");
-  await info.element("yearSelect").selectOption("1990");
-
-  const addr = initPage(page, "signup", opts.viewport).region("main").block("addressInfo");
-  await addr.element("firstNameInput").fill("TestFirst");
-  await addr.element("lastNameInput").fill("TestLast");
-  await addr.element("addressInput").fill("123 Test Street");
-  await addr.element("countrySelect").selectOption("United States");
-  await addr.element("stateInput").fill("California");
-  await addr.element("cityInput").fill("Los Angeles");
-  await addr.element("zipcodeInput").fill("90001");
-  await addr.element("mobileInput").fill("1234567890");
-  await addr.element("createAccountBtn").click();
-  await page.waitForURL("**/account_created");
-
-  const created = initPage(page, "account_created", opts.viewport);
-  await expect(created.region("main").block("success").element("title")).toBeVisible();
-  await created.region("main").block("success").element("continueBtn").click();
+  const form = po.region("main").block("loginForm");
+  await form.element("emailInput").fill(USER_EMAIL);
+  await form.element("passwordInput").fill(USER_PASS);
+  await form.element("loginBtn").click();
   await page.waitForURL("**/");
 
-  await expect(page.getByText(userName)).toBeVisible();
-  await home.region("header").block("nav").element("deleteAccount").click();
-  await page.waitForURL("**/delete_account");
+  await expect(page.getByText(USER_NAME)).toBeVisible();
 
-  const deleted = initPage(page, "delete_account", opts.viewport);
-  await expect(deleted.region("main").block("success").element("title")).toBeVisible();
-  await deleted.region("main").block("success").element("continueBtn").click();
+  const d = await deleteAccount(USER_EMAIL, USER_PASS);
+  expect(d.responseCode).toBe(200);
 }

@@ -24,7 +24,7 @@ jobs:
       - name: Restore auth state
         run: |
           if [ -n "${{ secrets.AUTH_STATE }}" ]; then
-            echo "${{ secrets.AUTH_STATE }}" > auth/persistent-user.json
+            echo "${{ secrets.AUTH_STATE }}" | base64 -d > auth/persistent-user.json
           fi
         continue-on-error: true
 

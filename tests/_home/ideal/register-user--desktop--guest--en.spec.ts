@@ -1,7 +1,7 @@
 import { test } from "@playwright/test";
 import { testRegisterUser } from "./shared/register-user";
 
-test("SPEC: _home — Register User", async ({ page }) => {
+test("SPEC: / — Register User", async ({ page }) => {
   test.info().annotations.push(
     { type: "feature", description: "User Registration" },
     { type: "story", description: "Register new user with valid data" },

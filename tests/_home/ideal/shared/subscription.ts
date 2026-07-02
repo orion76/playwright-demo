@@ -9,7 +9,7 @@ export interface ScenarioOpts {
 }
 
 export async function testSubscription(page: Page, opts: ScenarioOpts) {
-  const po = initPage(page, "_home", opts.viewport);
+  const po = initPage(page, "/", opts.viewport);
   await po.navigate();
 
   const sub = po.region("footer").block("subscription");

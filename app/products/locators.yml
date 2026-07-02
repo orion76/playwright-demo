@@ -1,3 +1,8 @@
+sidebar:
+  brands:
+    title:
+      by: role
+      role: heading
 main:
   search:
     searchInput:

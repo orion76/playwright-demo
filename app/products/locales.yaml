@@ -1,3 +1,6 @@
+sidebar:
+  brands:
+    title: { en: "Brands", he: "Brands" }
 main:
   search:
     searchInput: { en: "Search Product", he: "Search Product" }

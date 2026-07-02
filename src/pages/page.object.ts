@@ -58,7 +58,7 @@ export class PageObject<
   }
 
   async navigate(url?: string) {
-    const target = url ?? `${SITE_URL}${this.route === 'home' ? '/' : `/${this.route}`}`;
+    const target = url ?? `${SITE_URL}${this.route === '/' ? '/' : `/${this.route}`}`;
     await this._page.addInitScript(
       (lang) => localStorage.setItem('activeLanguage', lang),
       this._langService.current,

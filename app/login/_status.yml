@@ -6,3 +6,9 @@ logout:
   status: planned
 register-existing-email:
   status: base_test_generated
+place-order-register-before-checkout:
+  status: base_test_generated
+place-order-login-before-checkout:
+  status: base_test_generated
+verify-address-details-checkout:
+  status: base_test_generated

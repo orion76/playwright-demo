@@ -1,7 +1,7 @@
 import { test } from "@playwright/test";
 import { testSubscription } from "./shared/subscription";
 
-test("SPEC: _home — Subscription", async ({ page }) => {
+test("SPEC: / — Subscription", async ({ page }) => {
   test.info().annotations.push(
     { type: "feature", description: "Home" },
     { type: "story", description: "Subscribe on home page" },

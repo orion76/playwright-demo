@@ -6,3 +6,11 @@ test-cases-navigation:
   status: base_test_generated
 logout-user:
   status: base_test_generated
+view-category-products:
+  status: base_test_generated
+recommended-items:
+  status: base_test_generated
+scroll-up-arrow:
+  status: base_test_generated
+scroll-up-without-arrow:
+  status: base_test_generated

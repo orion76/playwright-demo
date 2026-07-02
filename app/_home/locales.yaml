@@ -10,6 +10,14 @@ header:
     contactUs: { en: "Contact us", he: "Contact us" }
     logout: { en: "Logout", he: "Logout" }
     deleteAccount: { en: "Delete Account", he: "Delete Account" }
+sidebar:
+  category:
+    title: { en: "Category", he: "Category" }
+    women: { en: "Women", he: "Women" }
+    men: { en: "Men", he: "Men" }
+    kids: { en: "Kids", he: "Kids" }
+  brands:
+    title: { en: "Brands", he: "Brands" }
 main:
   hero:
     title: { en: "AutomationExercise", he: "AutomationExercise" }

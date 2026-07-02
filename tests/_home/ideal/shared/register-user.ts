@@ -11,7 +11,7 @@ export interface ScenarioOpts {
 const dateSuffix = Date.now();
 
 export async function testRegisterUser(page: Page, opts: ScenarioOpts) {
-  const home = initPage(page, "_home", opts.viewport);
+  const home = initPage(page, "/", opts.viewport);
   await home.navigate();
   await expect(home.region("main").block("hero").element("title")).toBeVisible();
 

@@ -2,3 +2,5 @@ add-review:
   status: base_test_generated
 verify-product-detail:
   status: base_test_generated
+verify-product-quantity:
+  status: base_test_generated

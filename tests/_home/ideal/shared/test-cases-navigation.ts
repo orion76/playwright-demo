@@ -9,7 +9,7 @@ export interface ScenarioOpts {
 }
 
 export async function testTestCasesNavigation(page: Page, opts: ScenarioOpts) {
-  const po = initPage(page, "_home", opts.viewport);
+  const po = initPage(page, "/", opts.viewport);
   await po.navigate();
   await po.region("header").block("nav").element("testCases").click();
   await page.waitForURL("**/test_cases");

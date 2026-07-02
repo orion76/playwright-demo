@@ -1,7 +1,7 @@
 import { test } from "@playwright/test";
 import { testLogoutUser } from "./shared/logout-user";
 
-test("SPEC: _home — Logout User", async ({ page }) => {
+test("SPEC: / — Logout User", async ({ page }) => {
   test.info().annotations.push(
     { type: "feature", description: "User Session" },
     { type: "story", description: "Logout from account" },

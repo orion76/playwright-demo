@@ -1,7 +1,7 @@
 import { test } from "@playwright/test";
 import { testTestCasesNavigation } from "./shared/test-cases-navigation";
 
-test("SPEC: _home — Test Cases Navigation", async ({ page }) => {
+test("SPEC: / — Test Cases Navigation", async ({ page }) => {
   test.info().annotations.push(
     { type: "feature", description: "Home" },
     { type: "story", description: "Navigate to test cases page" },

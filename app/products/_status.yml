@@ -2,3 +2,13 @@ search-product:
   status: base_test_generated
 verify-all-products:
   status: base_test_generated
+add-products-in-cart:
+  status: base_test_generated
+view-brand-products:
+  status: base_test_generated
+search-products-verify-cart-after-login:
+  status: base_test_generated
+place-order-register-while-checkout:
+  status: base_test_generated
+download-invoice-after-purchase:
+  status: base_test_generated

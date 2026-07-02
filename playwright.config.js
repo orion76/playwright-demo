@@ -1,4 +1,9 @@
 const { defineConfig } = require('@playwright/test');
+const { existsSync } = require('fs');
+const { join } = require('path');
+
+const localExe = '/home/pasha/.cache/ms-playwright/chromium-1223/chrome-linux64/chrome';
+const launchOptions = existsSync(localExe) ? { executablePath: localExe } : {};
 
 module.exports = defineConfig({
   testDir: './tests',
@@ -14,9 +19,7 @@ module.exports = defineConfig({
     headless: true,
     viewport: { width: 1920, height: 1080 },
     video: 'on',
-    launchOptions: {
-      executablePath: '/home/pasha/.cache/ms-playwright/chromium-1223/chrome-linux64/chrome',
-    },
+    launchOptions,
   },
   projects: [
     {

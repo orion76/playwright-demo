@@ -20,7 +20,7 @@ export async function testLogoutUser(page: Page, opts: ScenarioOpts) {
   await form.element("loginBtn").click();
   await page.waitForURL("**/");
 
-  const home = initPage(page, "_home", opts.viewport);
+  const home = initPage(page, "/", opts.viewport);
   await expect(page.getByText("Logged in as")).toBeVisible();
   await home.region("header").block("nav").element("logout").click();
   await page.waitForURL("**/login");

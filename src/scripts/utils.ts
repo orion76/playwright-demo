@@ -1,6 +1,6 @@
 export function getUrlPath(url: string) {
-  const cleanUrl = url.replace(/^\/+|\/+$/g, "");
-  const parts = cleanUrl.split("/");
+  const cleanUrl = url.replace(/^\/+|\/+$/g, '');
+  const parts = cleanUrl.split('/');
 
   return parts[parts.length - 1];
 }
@@ -9,12 +9,12 @@ export function pathToCamelCase(path: string) {
   return path
     .split(/[-_]/)
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join("");
+    .join('');
 }
 export function pathToKebabCase(path: string) {
   return path
-    .replace(/([a-z])([A-Z])/g, "$1-$2")
-    .replace(/[\s_]+/g, "-")
+    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    .replace(/[\s_]+/g, '-')
     .toLowerCase();
 }
 
@@ -40,12 +40,12 @@ export function createTestTemplate(camelCaseName: string, pagePath: string) {
   const pageClass = `${camelCaseName}Page`;
   return `import { test, expect } from '@playwright/test';
 import { TestService } from '../../src/services/test.service';
-import { ${pageClass} } from '../../src/pages/${pagePath.replace(".ts", "")}';
+import { ${pageClass} } from '../../src/pages/${pagePath.replace('.ts', '')}';
 
 test.use({ serviceWorkers: 'block' });
 
 test('${camelCaseName} main scenario', async ({ page }) => {
-  const po = await new TestService(page, 'he', 'desktop').open(${pageClass}, '${camelCaseName.toLowerCase()}');
+  const po = await new TestService(page, 'en', 'desktop').open(${pageClass}, '${camelCaseName.toLowerCase()}');
 
   // TODO: напиши шаги теста
   await expect(po.region('regionName').block('blockName').element('elementName')).toBeVisible();

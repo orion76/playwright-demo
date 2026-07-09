@@ -15,6 +15,7 @@ export async function testVerifyAllProducts(page: Page, opts: ScenarioOpts) {
   await test.step('Expect All Products title visible', async () => {
     const list = po.region('main').block('productList');
     await expect(list.element('title')).toBeVisible();
+    await expect(list.element('addToCartBtn').first()).toBeVisible();
   });
 
   await test.step('Click View Product on first item', async () => {

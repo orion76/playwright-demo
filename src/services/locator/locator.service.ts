@@ -7,7 +7,9 @@ export interface ILocatorService<PageDefs extends TPageLocatorDefs> {
   region<R extends keyof PageDefs>(name: R): ILocatorRegionProxy<PageDefs[R]>;
 }
 
-export class LocatorService<PageDefs extends TPageLocatorDefs> implements ILocatorService<PageDefs> {
+export class LocatorService<
+  PageDefs extends TPageLocatorDefs,
+> implements ILocatorService<PageDefs> {
   constructor(
     private defs: PageDefs,
     private page: Page,

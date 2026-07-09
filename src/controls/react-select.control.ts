@@ -1,14 +1,14 @@
-import { Page, Locator } from "@playwright/test";
-import { IFormControl } from "./types";
-import { ULanguage } from "../types";
+import { Page, Locator } from '@playwright/test';
+import { IFormControl } from './types';
+import { ULanguage } from '../types';
 
 interface IReactSelectLocatorDefs {
-  option: { by: "role"; role: "option" };
+  option: { by: 'role'; role: 'option' };
 }
 
 export class ReactSelectControl implements IFormControl<IReactSelectLocatorDefs> {
   static readonly LOCATORS: IReactSelectLocatorDefs = {
-    option: { by: "role", role: "option" },
+    option: { by: 'role', role: 'option' },
   };
 
   private _lang: ULanguage;
@@ -16,7 +16,7 @@ export class ReactSelectControl implements IFormControl<IReactSelectLocatorDefs>
   constructor(
     private page: Page,
     private trigger: Locator,
-    lang: ULanguage = "he",
+    lang: ULanguage = 'en',
   ) {
     this._lang = lang;
   }
@@ -32,27 +32,27 @@ export class ReactSelectControl implements IFormControl<IReactSelectLocatorDefs>
   async selectOption(optionText: string): Promise<void> {
     await this.trigger.click();
     await this.page.waitForTimeout(300);
-    await this.page.getByRole("option", { name: optionText, exact: true }).click();
+    await this.page.getByRole('option', { name: optionText, exact: true }).click();
   }
 
   async setValue(text: string): Promise<void> {
     // Searchable React-Select: click, type text, press ArrowDown + Enter
     await this.trigger.click();
     await this.page.waitForTimeout(300);
-    const input = this.trigger.locator("input").first();
+    const input = this.trigger.locator('input').first();
     if (await input.isVisible().catch(() => false)) {
       await input.fill(text);
       await this.page.waitForTimeout(1000);
-      await this.page.keyboard.press("ArrowDown");
-      await this.page.keyboard.press("Enter");
+      await this.page.keyboard.press('ArrowDown');
+      await this.page.keyboard.press('Enter');
     } else {
       // Non-searchable (e.g. gender): just click the option
-      await this.page.getByRole("option", { name: text, exact: true }).click();
+      await this.page.getByRole('option', { name: text, exact: true }).click();
     }
   }
 
   async getValue(): Promise<string | null> {
-    const input = this.trigger.locator("input").first();
+    const input = this.trigger.locator('input').first();
     if (await input.isVisible().catch(() => false)) {
       return await input.inputValue();
     }

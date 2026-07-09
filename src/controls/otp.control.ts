@@ -1,14 +1,14 @@
-import { Page, Locator } from "@playwright/test";
-import { IFormControl } from "./types";
-import { ULanguage } from "../types";
+import { Page, Locator } from '@playwright/test';
+import { IFormControl } from './types';
+import { ULanguage } from '../types';
 
 interface IOtpLocatorDefs {
-  digit: { by: "css"; selector: string };
+  digit: { by: 'css'; selector: string };
 }
 
 export class OtpControl implements IFormControl<IOtpLocatorDefs> {
   static readonly LOCATORS: IOtpLocatorDefs = {
-    digit: { by: "css", selector: 'input[type="tel"]' },
+    digit: { by: 'css', selector: 'input[type="tel"]' },
   };
 
   private _lang: ULanguage;
@@ -16,7 +16,7 @@ export class OtpControl implements IFormControl<IOtpLocatorDefs> {
 
   constructor(
     private page: Page,
-    lang: ULanguage = "he",
+    lang: ULanguage = 'en',
     count = 6,
   ) {
     this._lang = lang;
@@ -58,7 +58,7 @@ export class OtpControl implements IFormControl<IOtpLocatorDefs> {
     for (let i = 0; i < this._count; i++) {
       digits.push(await this.digit(i).inputValue());
     }
-    return digits.join("");
+    return digits.join('');
   }
 
   async clear(): Promise<void> {

@@ -24,6 +24,6 @@ export async function testScrollUpArrow(page: Page, opts: ScenarioOpts) {
 
   await test.step('Expect hero text visible after scroll up', async () => {
     const hero = po.region('main').block('hero');
-    await expect(hero.element('title')).toBeVisible();
+    await expect(hero.element('fullFledgedText').first()).toBeVisible();
   });
 }

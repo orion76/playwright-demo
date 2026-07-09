@@ -19,7 +19,7 @@ export class FileUploadControl implements IFormControl<IFileUploadLocatorDefs> {
   constructor(
     private page: Page,
     private trigger: Locator,
-    lang: ULanguage = 'he',
+    lang: ULanguage = 'en',
   ) {
     this._lang = lang;
   }

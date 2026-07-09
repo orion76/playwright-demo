@@ -1,4 +1,4 @@
-import { SITE_URL } from "../config";
+import { SITE_URL } from '../config';
 
 const BASE = `${SITE_URL}/api`;
 
@@ -34,7 +34,7 @@ export async function createAccount(data: CreateAccountData): Promise<ApiRespons
   }
 
   const res = await fetch(`${BASE}/createAccount`, {
-    method: "POST",
+    method: 'POST',
     body,
   });
   return res.json();
@@ -44,7 +44,7 @@ export async function deleteAccount(email: string, password: string): Promise<Ap
   const body = new URLSearchParams({ email, password });
 
   const res = await fetch(`${BASE}/deleteAccount`, {
-    method: "DELETE",
+    method: 'DELETE',
     body,
   });
   return res.json();

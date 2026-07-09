@@ -6,9 +6,9 @@ export interface ILocatorBlockProxy<TBlock extends Record<string, UElementLocato
   element<K extends keyof TBlock>(name: K): Locator;
 }
 
-export class LocatorBlockProxy<TBlock extends Record<string, UElementLocatorDef>>
-  implements ILocatorBlockProxy<TBlock>
-{
+export class LocatorBlockProxy<
+  TBlock extends Record<string, UElementLocatorDef>,
+> implements ILocatorBlockProxy<TBlock> {
   constructor(
     private block: TBlock,
     private blockTranslation: IBlockTranslation,

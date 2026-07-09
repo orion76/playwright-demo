@@ -20,7 +20,9 @@ export async function testSearchProductsVerifyCartAfterLogin(page: Page, opts: S
   });
 
   await test.step('Expect SEARCHED PRODUCTS title', async () => {
-    await expect(po.region('main').block('productList').element('searchedTitle')).toBeVisible();
+    const list = po.region('main').block('productList');
+    await expect(list.element('searchedTitle')).toBeVisible();
+    await expect(list.element('addToCartBtn').first()).toBeVisible();
   });
 
   await test.step('Add found products to cart and view cart', async () => {

@@ -1,5 +1,5 @@
-import { test as base, expect } from "@playwright/test";
-import { TEST_PLUGINS, VIEWPORTS, DEFAULT_VIEWPORT } from "../config";
+import { test as base, expect } from '@playwright/test';
+import { TEST_PLUGINS, VIEWPORTS, DEFAULT_VIEWPORT } from '../config';
 
 export { expect, VIEWPORTS, DEFAULT_VIEWPORT };
 

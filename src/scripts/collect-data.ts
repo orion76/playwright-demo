@@ -1,4 +1,4 @@
-import { Locator, Page } from "@playwright/test";
+import { Locator, Page } from '@playwright/test';
 
 export interface DropdownEntry {
   triggerText: string;
@@ -14,7 +14,7 @@ export async function expandAndCollect(
   page: Page,
   target: Locator,
   label: string,
-  knownLinksCount: number
+  knownLinksCount: number,
 ): Promise<DropdownEntry | null> {
   const isVisible = await target.isVisible().catch(() => false);
   if (!isVisible) return null;
@@ -22,11 +22,11 @@ export async function expandAndCollect(
   await target.click();
   await page.waitForTimeout(400);
 
-  const allLinks = await page.getByRole("link").all();
+  const allLinks = await page.getByRole('link').all();
   const links: { text: string; href: string | null }[] = [];
   for (const link of allLinks) {
     const text = (await link.textContent())?.trim();
-    const href = await link.getAttribute("href");
+    const href = await link.getAttribute('href');
     if (text && !links.some((l) => l.text === text)) {
       links.push({ text, href });
     }
@@ -35,7 +35,7 @@ export async function expandAndCollect(
   const newLinks = links.slice(knownLinksCount);
   if (newLinks.length === 0) return null;
 
-  await page.keyboard.press("Escape");
+  await page.keyboard.press('Escape');
   await page.waitForTimeout(200);
 
   return { triggerText: label, links: newLinks };
@@ -46,17 +46,17 @@ export async function expandAllDropdowns(page: Page): Promise<DropdownEntry[]> {
 
   const triggers = page.locator(
     '[class*="dropdown"]:not([class*="dropdown"] *), ' +
-    '[class*="menu-trigger"], ' +
-    '[class*="select"]:not([class*="select"] *), ' +
-    '[role="combobox"], ' +
-    '[aria-haspopup]'
+      '[class*="menu-trigger"], ' +
+      '[class*="select"]:not([class*="select"] *), ' +
+      '[role="combobox"], ' +
+      '[aria-haspopup]',
   );
 
   const count = await triggers.count();
   for (let i = 0; i < count; i++) {
     try {
       const trigger = triggers.nth(i);
-      const text = (await trigger.textContent())?.trim() || "";
+      const text = (await trigger.textContent())?.trim() || '';
       const isVisible = await trigger.isVisible();
       if (!isVisible || !text) continue;
 
@@ -78,21 +78,21 @@ export async function expandAllDropdowns(page: Page): Promise<DropdownEntry[]> {
 export async function expandMenuByText(
   page: Page,
   textOrPattern: string | RegExp,
-  knownLinksCount: number
+  knownLinksCount: number,
 ): Promise<DropdownEntry | null> {
   const target = page.getByText(textOrPattern, { exact: false }).first();
   const exists = await target.count();
   if (!exists) return null;
 
-  const label = typeof textOrPattern === "string" ? textOrPattern : textOrPattern.source;
+  const label = typeof textOrPattern === 'string' ? textOrPattern : textOrPattern.source;
   return expandAndCollect(page, target, label, knownLinksCount);
 }
 
 export async function expandMenuByRole(
   page: Page,
-  role: "button" | "link" | "menuitem" | "combobox",
+  role: 'button' | 'link' | 'menuitem' | 'combobox',
   name: string | RegExp,
-  knownLinksCount: number
+  knownLinksCount: number,
 ): Promise<DropdownEntry | null> {
   const target = page.getByRole(role, { name: name }).first();
   const exists = await target.count();

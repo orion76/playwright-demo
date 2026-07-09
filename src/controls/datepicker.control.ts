@@ -23,8 +23,8 @@ export class DatepickerControl implements IFormControl<IDatepickerLocatorDefs> {
     saveBtn: { by: 'role', role: 'button' },
   };
 
-  static readonly LOCALES: Record<string, { en: string; he: string }> = {
-    saveBtn: { en: 'Save', he: 'שמור' },
+  static readonly LOCALES: Record<string, Record<string, string>> = {
+    saveBtn: { en: 'Save' },
   };
 
   private _lang: ULanguage;
@@ -32,7 +32,7 @@ export class DatepickerControl implements IFormControl<IDatepickerLocatorDefs> {
   constructor(
     private page: Page,
     private trigger: Locator,
-    lang: ULanguage = 'he',
+    lang: ULanguage = 'en',
   ) {
     this._lang = lang;
   }

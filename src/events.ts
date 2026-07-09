@@ -1,7 +1,7 @@
-import { readFileSync } from "fs";
-import { load } from "js-yaml";
-import { join } from "path";
-import { getProjectRoot } from "./utils";
+import { readFileSync } from 'fs';
+import { load } from 'js-yaml';
+import { join } from 'path';
+import { getProjectRoot } from './utils';
 
 export interface TestEvent {
   title: string;
@@ -13,8 +13,8 @@ interface TestEvents {
 }
 
 export function readTestEvents(): TestEvent[] {
-  const file = join(getProjectRoot(), "app", "config.yml");
-  const doc = load(readFileSync(file, "utf-8")) as TestEvents;
+  const file = join(getProjectRoot(), 'app', 'config.yml');
+  const doc = load(readFileSync(file, 'utf-8')) as TestEvents;
   return doc.test_events ?? [];
 }
 

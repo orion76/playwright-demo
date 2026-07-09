@@ -1,8 +1,8 @@
-import fs from "fs";
-import path from "path";
-import { load } from "js-yaml";
-import { getProjectRoot } from "./utils";
-import type { URole, UViewport, ULanguage } from "./types";
+import fs from 'fs';
+import path from 'path';
+import { load } from 'js-yaml';
+import { getProjectRoot } from './utils';
+import type { URole, UViewport, ULanguage } from './types';
 
 export interface ScenarioCombination {
   viewport: UViewport;
@@ -14,23 +14,14 @@ export interface ScenarioConfig {
   combinations: ScenarioCombination[];
 }
 
-export function loadScenarioConfig(
-  route: string,
-  scenario: string
-): ScenarioConfig {
-  const promptPath = path.join(
-    getProjectRoot(),
-    "app",
-    route,
-    "spec",
-    `${scenario}.prompt.md`
-  );
+export function loadScenarioConfig(route: string, scenario: string): ScenarioConfig {
+  const promptPath = path.join(getProjectRoot(), 'app', route, 'spec', `${scenario}.prompt.md`);
 
   if (!fs.existsSync(promptPath)) {
     return { combinations: [] };
   }
 
-  const content = fs.readFileSync(promptPath, "utf8");
+  const content = fs.readFileSync(promptPath, 'utf8');
   const frontmatter = extractYamlFrontmatter(content);
 
   if (!frontmatter) {

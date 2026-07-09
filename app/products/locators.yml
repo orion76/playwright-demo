@@ -23,6 +23,8 @@ main:
       role: heading
     categoryTitle:
       by: text
+    womenDressTitle:
+      by: text
     searchedTitle:
       by: text
     addToCartBtn:

@@ -37,6 +37,8 @@ main:
     title:
       by: role
       role: heading
+    fullFledgedText:
+      by: text
   featuresItems:
     title:
       by: role

@@ -1,7 +1,7 @@
-import { analyzeComplexity } from "./analyze";
-import { readStats, appendRecord } from "./stats";
-import { estimate } from "./forecast";
-import type { TestDebugRecord, ComplexityMetrics } from "./types";
+import { analyzeComplexity } from './analyze';
+import { readStats, appendRecord } from './stats';
+import { estimate } from './forecast';
+import type { TestDebugRecord, ComplexityMetrics } from './types';
 
 function printUsage() {
   console.log(`
@@ -21,13 +21,13 @@ Examples:
 async function main() {
   const args = process.argv.slice(2);
 
-  if (args.length === 0 || args[0] === "--help") {
+  if (args.length === 0 || args[0] === '--help') {
     printUsage();
     process.exit(0);
   }
 
   const route = args[0];
-  const saveMode = args.includes("--save");
+  const saveMode = args.includes('--save');
 
   console.log(`\n📊 Analyzing route: ${route}\n`);
 
@@ -44,11 +44,11 @@ async function main() {
     await saveRecordInteractive(route, metrics);
   }
 
-  console.log("");
+  console.log('');
 }
 
 function printComplexity(m: ComplexityMetrics) {
-  console.log("Complexity Metrics:");
+  console.log('Complexity Metrics:');
   console.log(`  Regions:            ${m.regions}`);
   console.log(`  Blocks:             ${m.blocks}`);
   console.log(`  Interactive elems:  ${m.interactiveElements}`);
@@ -58,7 +58,7 @@ function printComplexity(m: ComplexityMetrics) {
   console.log(`  Filter dropdowns:   ${m.filterDropdowns}`);
   console.log(`  Wizard steps:       ${m.wizardSteps}`);
   console.log(`  Scenario steps:     ${m.scenarioSteps}`);
-  console.log("");
+  console.log('');
 }
 
 function printForecast(f: {
@@ -69,7 +69,7 @@ function printForecast(f: {
   similarTests: number;
   calibrationFactor: number;
 }) {
-  console.log("Forecast:");
+  console.log('Forecast:');
   console.log(`  Estimated time:     ${f.estimatedMinutes} min`);
   console.log(`  Estimated cost:     $${f.estimatedCost}`);
   console.log(`  Estimated iters:    ${f.estimatedIterations}`);
@@ -79,33 +79,26 @@ function printForecast(f: {
   console.log(`  Global multiplier:  3 (manual)`);
 }
 
-async function saveRecordInteractive(
-  route: string,
-  complexity: ComplexityMetrics
-) {
-  console.log("Enter debug stats for this route:");
+async function saveRecordInteractive(route: string, complexity: ComplexityMetrics) {
+  console.log('Enter debug stats for this route:');
   const rl = {
     question: (prompt: string): Promise<string> => {
       process.stdout.write(prompt);
       return new Promise((resolve) => {
-        process.stdin.once("data", (data) =>
-          resolve(data.toString().trim())
-        );
+        process.stdin.once('data', (data) => resolve(data.toString().trim()));
       });
     },
   };
 
-  const durationMs =
-    parseInt(await rl.question("  Total duration (ms): ")) || 0;
-  const cost = parseFloat(await rl.question("  Total cost ($): ")) || 0;
-  const iterations =
-    parseInt(await rl.question("  Iterations to green: ")) || 1;
-  const toolCalls = parseInt(await rl.question("  Tool calls: ")) || 0;
-  const errors = parseInt(await rl.question("  Errors: ")) || 0;
+  const durationMs = parseInt(await rl.question('  Total duration (ms): ')) || 0;
+  const cost = parseFloat(await rl.question('  Total cost ($): ')) || 0;
+  const iterations = parseInt(await rl.question('  Iterations to green: ')) || 1;
+  const toolCalls = parseInt(await rl.question('  Tool calls: ')) || 0;
+  const errors = parseInt(await rl.question('  Errors: ')) || 0;
 
   const record: TestDebugRecord = {
     route,
-    scenario: "*",
+    scenario: '*',
     complexity,
     totalDurationMs: durationMs,
     totalCost: cost,
@@ -115,12 +108,12 @@ async function saveRecordInteractive(
     timestamp: new Date().toISOString(),
   };
 
-  const { appendRecord: save } = await import("./stats");
+  const { appendRecord: save } = await import('./stats');
   save(record);
-  console.log("  ✅ Record saved to .opencode-logs/test-stats.yaml");
+  console.log('  ✅ Record saved to .opencode-logs/test-stats.yaml');
 }
 
 main().catch((err) => {
-  console.error("Error:", err);
+  console.error('Error:', err);
   process.exit(1);
 });

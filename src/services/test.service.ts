@@ -1,7 +1,7 @@
-import { Page } from "@playwright/test";
-import { initPage } from "../pages/init";
-import { IPageObject } from "../pages/page.object";
-import type { ULanguage, UViewport } from "../types";
+import { Page } from '@playwright/test';
+import { initPage } from '../pages/init';
+import { IPageObject } from '../pages/page.object';
+import type { ULanguage, UViewport } from '../types';
 
 export interface ITestService {
   open(route: string): Promise<IPageObject<any>>;

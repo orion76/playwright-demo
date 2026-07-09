@@ -5,6 +5,7 @@ main:
     cartTable: { en: 'Cart' }
     deleteItem: { en: 'Delete' }
     registerLoginBtn: { en: 'Register / Login' }
+    checkoutModalText: { en: 'Register / Login account to proceed on checkout.' }
 footer:
   subscription:
     title: { en: 'Subscription' }

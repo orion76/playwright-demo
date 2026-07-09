@@ -1,16 +1,11 @@
-import { existsSync, readFileSync, writeFileSync } from "fs";
-import { load, dump } from "js-yaml";
-import type {
-  ComplexityMetrics,
-  Forecast,
-  TestDebugRecord,
-  ElementCoefficients,
-} from "./types";
-import { DEFAULT_COEFFICIENTS, COEFFICIENTS_FILE } from "./types";
+import { existsSync, readFileSync, writeFileSync } from 'fs';
+import { load, dump } from 'js-yaml';
+import type { ComplexityMetrics, Forecast, TestDebugRecord, ElementCoefficients } from './types';
+import { DEFAULT_COEFFICIENTS, COEFFICIENTS_FILE } from './types';
 
 export function complexityWeight(
   m: ComplexityMetrics,
-  coef: ElementCoefficients = DEFAULT_COEFFICIENTS
+  coef: ElementCoefficients = DEFAULT_COEFFICIENTS,
 ): number {
   return (
     m.regions * coef.perRegion +
@@ -33,7 +28,7 @@ export function rawMinutes(m: ComplexityMetrics, coef?: ElementCoefficients): nu
 export function readCoefficients(): ElementCoefficients {
   if (!existsSync(COEFFICIENTS_FILE)) return { ...DEFAULT_COEFFICIENTS };
   try {
-    const doc = load(readFileSync(COEFFICIENTS_FILE, "utf-8")) as any;
+    const doc = load(readFileSync(COEFFICIENTS_FILE, 'utf-8')) as any;
     if (doc && doc.version) {
       return { ...DEFAULT_COEFFICIENTS, ...doc };
     }
@@ -45,7 +40,7 @@ export function readCoefficients(): ElementCoefficients {
 
 export function saveCoefficients(coef: ElementCoefficients): void {
   const yaml = dump(coef, { lineWidth: 120, noRefs: true });
-  writeFileSync(COEFFICIENTS_FILE, yaml, "utf-8");
+  writeFileSync(COEFFICIENTS_FILE, yaml, 'utf-8');
 }
 
 /**
@@ -54,7 +49,7 @@ export function saveCoefficients(coef: ElementCoefficients): void {
  */
 export function refineCoefficients(
   actual: TestDebugRecord,
-  current: ElementCoefficients
+  current: ElementCoefficients,
 ): ElementCoefficients {
   const predicted = rawMinutes(actual.complexity, current);
   const actualMin = actual.totalDurationMs / 60000;
@@ -70,17 +65,22 @@ export function refineCoefficients(
 
   // globalMultiplier is set manually by the user — skip auto-refine
   const PER_ELEMENT_KEYS: (keyof ElementCoefficients)[] = [
-    "perRegion", "perBlock", "perElement", "perIframe", "perCustomControl",
-    "perApiEndpoint", "perFilterDropdown", "perWizardStep", "perScenarioStep",
+    'perRegion',
+    'perBlock',
+    'perElement',
+    'perIframe',
+    'perCustomControl',
+    'perApiEndpoint',
+    'perFilterDropdown',
+    'perWizardStep',
+    'perScenarioStep',
   ];
 
   const adjust = (key: keyof ElementCoefficients, count: number) => {
-    if (count <= 0 || typeof updated[key] !== "number") return;
-    const contribution = (updated[key] as number) * count / predicted;
+    if (count <= 0 || typeof updated[key] !== 'number') return;
+    const contribution = ((updated[key] as number) * count) / predicted;
     const derived = (current[key] as number) * ratio;
-    updated[key] = Math.round(
-      ((updated[key] as number) * (1 - rate) + derived * rate) * 10
-    ) / 10;
+    updated[key] = Math.round(((updated[key] as number) * (1 - rate) + derived * rate) * 10) / 10;
   };
 
   for (const key of PER_ELEMENT_KEYS) {
@@ -117,17 +117,18 @@ export function calibrationFactor(history: TestDebugRecord[]): number {
   return Math.round((totalActual / totalPredicted) * 100) / 100;
 }
 
-function isSimilarWeight(m: ComplexityMetrics, t: ComplexityMetrics, coef: ElementCoefficients): boolean {
+function isSimilarWeight(
+  m: ComplexityMetrics,
+  t: ComplexityMetrics,
+  coef: ElementCoefficients,
+): boolean {
   const wm = complexityWeight(m, coef);
   const wt = complexityWeight(t, coef);
   if (wm === 0 && wt === 0) return true;
   return Math.abs(wm - wt) / Math.max(wm, wt, 1) <= 0.3;
 }
 
-export function estimate(
-  complexity: ComplexityMetrics,
-  history: TestDebugRecord[]
-): Forecast {
+export function estimate(complexity: ComplexityMetrics, history: TestDebugRecord[]): Forecast {
   const coef = readCoefficients();
   const similar = history.filter((r) => isSimilarWeight(complexity, r.complexity, coef));
   const n = similar.length;

@@ -17,7 +17,7 @@ export class RichTextControl implements IFormControl<IRichTextLocatorDefs> {
   constructor(
     private page: Page,
     private iframeSelector: string,
-    lang: ULanguage = 'he',
+    lang: ULanguage = 'en',
   ) {
     this.frame = page.frameLocator(iframeSelector);
     this._lang = lang;

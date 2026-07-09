@@ -1,15 +1,22 @@
-import fs from "fs";
-import path from "path";
-import { createPageClassTemplate, createTestTemplate, getUrlPath, pathToCamelCase, pathToKebabCase } from "./utils";
+import fs from 'fs';
+import path from 'path';
+import {
+  createPageClassTemplate,
+  createTestTemplate,
+  getUrlPath,
+  pathToCamelCase,
+  pathToKebabCase,
+} from './utils';
 
-const BASE_PAGE_CLASS_PATH = "";
-
+const BASE_PAGE_CLASS_PATH = '';
 
 // Получаем роут из аргументов командной строки (например, /billing/invoice-settings)
 const route = process.argv[2];
 
 if (!route) {
-  console.error("Ошибка: Укажите роут страницы! Пример: node scaffold.js /billing/invoice-settings");
+  console.error(
+    'Ошибка: Укажите роут страницы! Пример: node scaffold.js /billing/invoice-settings',
+  );
   process.exit(1);
 }
 
@@ -23,8 +30,8 @@ const className = `${camelCaseName}Page`;
 // 2. Вычисляем Имя Файла (kebab-case)
 const kebabCaseName = pathToKebabCase(lastPart);
 
-const pagePath = path.join("pages", `${kebabCaseName}.page.ts`);
-const testPath = path.join("tests", `${kebabCaseName}.spec.ts`);
+const pagePath = path.join('pages', `${kebabCaseName}.page.ts`);
+const testPath = path.join('tests', `${kebabCaseName}.spec.ts`);
 
 // Шаблон для класса страницы (Page Object)
 const pageTemplate = createPageClassTemplate(route, BASE_PAGE_CLASS_PATH);
@@ -33,8 +40,8 @@ const pageTemplate = createPageClassTemplate(route, BASE_PAGE_CLASS_PATH);
 const testTemplate = createTestTemplate(camelCaseName, pagePath);
 
 // Физически создаем папки и файлы на диске
-fs.mkdirSync("pages", { recursive: true });
-fs.mkdirSync("tests", { recursive: true });
+fs.mkdirSync('pages', { recursive: true });
+fs.mkdirSync('tests', { recursive: true });
 
 fs.writeFileSync(pagePath, pageTemplate);
 fs.writeFileSync(testPath, testTemplate);

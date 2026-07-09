@@ -1,5 +1,5 @@
-import { test as base } from "@playwright/test";
-import { SITE_URL } from "../../config";
+import { test as base } from '@playwright/test';
+import { SITE_URL } from '../../config';
 
 let connectivityOk: boolean | null = null;
 
@@ -7,7 +7,7 @@ async function checkSite(): Promise<boolean> {
   if (connectivityOk !== null) return connectivityOk;
   try {
     const res = await fetch(SITE_URL, {
-      method: "HEAD",
+      method: 'HEAD',
       signal: AbortSignal.timeout(10000),
     });
     connectivityOk = res.ok;

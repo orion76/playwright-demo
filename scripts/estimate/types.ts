@@ -65,4 +65,4 @@ export const DEFAULT_COEFFICIENTS: ElementCoefficients = {
   version: 1,
 };
 
-export const COEFFICIENTS_FILE = ".opencode-logs/estimate-coefficients.yaml";
+export const COEFFICIENTS_FILE = '.opencode-logs/estimate-coefficients.yaml';

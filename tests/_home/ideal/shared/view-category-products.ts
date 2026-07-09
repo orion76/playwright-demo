@@ -34,6 +34,9 @@ export async function testViewCategoryProducts(page: Page, opts: ScenarioOpts) {
     await expect(
       prodPage.region('main').block('productList').element('categoryTitle'),
     ).toBeVisible();
+    await expect(
+      prodPage.region('main').block('productList').element('womenDressTitle'),
+    ).toBeVisible();
   });
 
   await test.step('Click Men category', async () => {

@@ -24,6 +24,7 @@ sidebar:
 main:
   hero:
     title: { en: 'AutomationExercise' }
+    fullFledgedText: { en: 'Full-Fledged practice website for Automation Engineers' }
   featuresItems:
     title: { en: 'Features Items' }
   recommendedItems:

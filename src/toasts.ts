@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test";
+import { Page } from '@playwright/test';
 
 const SCRIPT = `
 (function() {
@@ -102,7 +102,7 @@ export async function waitForToast(
   while (Date.now() - start < timeout) {
     const toasts = await readToasts(page);
     for (const t of toasts) {
-      if (typeof text === "string" ? t.includes(text) : text.test(t)) {
+      if (typeof text === 'string' ? t.includes(text) : text.test(t)) {
         return t;
       }
     }

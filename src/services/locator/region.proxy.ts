@@ -3,13 +3,15 @@ import { ITranslationService } from '../translation/translation.service';
 import { ILocatorBlockProxy, LocatorBlockProxy } from './block.proxy';
 import { type UElementLocatorDef } from '../../types';
 
-export interface ILocatorRegionProxy<TRegion extends Record<string, Record<string, UElementLocatorDef>>> {
+export interface ILocatorRegionProxy<
+  TRegion extends Record<string, Record<string, UElementLocatorDef>>,
+> {
   block<B extends keyof TRegion>(name: B): ILocatorBlockProxy<TRegion[B]>;
 }
 
-export class LocatorRegionProxy<TRegion extends Record<string, Record<string, UElementLocatorDef>>>
-  implements ILocatorRegionProxy<TRegion>
-{
+export class LocatorRegionProxy<
+  TRegion extends Record<string, Record<string, UElementLocatorDef>>,
+> implements ILocatorRegionProxy<TRegion> {
   constructor(
     private region: TRegion,
     private regionName: string,

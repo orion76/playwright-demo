@@ -13,4 +13,5 @@ main:
     viewCartInModal: { en: 'View Cart' }
     viewProductLink: { en: 'View Product' }
     categoryTitle: { en: 'Category' }
+    womenDressTitle: { en: 'Women - Dress Products' }
     searchedTitle: { en: 'Searched Products' }

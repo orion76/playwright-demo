@@ -29,6 +29,7 @@ export async function testDownloadInvoiceAfterPurchase(page: Page, opts: Scenari
     const cart = initPage(page, 'view_cart', opts.viewport);
     const content = cart.region('main').block('cartContent');
     await content.element('checkoutBtn').click();
+    await expect(content.element('checkoutModalText')).toBeVisible();
   });
 
   await test.step('Click Register / Login from modal', async () => {

@@ -57,7 +57,9 @@ export function analyzeComplexity(route: string): ComplexityMetrics {
   let scenarioSteps = 0;
   try {
     const specDir = join(routeDir, 'spec');
-    const files = readdirSync(specDir).filter((f) => f.endsWith('.md') && !f.endsWith('.prompt.md'));
+    const files = readdirSync(specDir).filter(
+      (f) => f.endsWith('.md') && !f.endsWith('.prompt.md'),
+    );
     for (const file of files) {
       const content = readFileSync(join(specDir, file), 'utf-8');
       iframes += countRegex(content, /iframe|TinyMCE|rich.text/i);

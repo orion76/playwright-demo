@@ -15,6 +15,15 @@ main:
     messageInput:
       by: css
       selector: "#contact-us-form textarea[placeholder='Your Message Here']"
+    fileInput:
+      by: css
+      selector: "input[type='file']"
     submitBtn:
       by: css
       selector: "#contact-us-form input[type='submit']"
+    successMsg:
+      by: css
+      selector: '.status.alert-success'
+    homeLink:
+      by: css
+      selector: 'a.btn.btn-success'

@@ -1,5 +1,5 @@
 route_folders:
-  "/": "_home"
+  '/': '_home'
 
 locator_strategies:
   - data-qa

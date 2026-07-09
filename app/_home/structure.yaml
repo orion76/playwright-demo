@@ -1,4 +1,4 @@
-name: "Home"
+name: 'Home'
 regions:
   - name: header
     blocks:
@@ -49,12 +49,22 @@ regions:
           value: "heading, { name: 'AutomationExercise' }"
         content:
           type: getByText
-          value: "Full-Fledged practice website for Automation Engineers"
+          value: 'Full-Fledged practice website for Automation Engineers'
       - type: card
         name: featuresItems
         title:
           type: getByRole
           value: "heading, { name: 'Features Items' }"
+      - type: card
+        name: recommendedItems
+        title:
+          type: getByText
+          value: 'recommended items'
+        fields:
+          - name: addToCartBtn
+            locator:
+              type: getByRole
+              value: "link, { name: 'Add to cart' }"
   - name: sidebar
     blocks:
       - type: menu
@@ -75,6 +85,14 @@ regions:
             locator:
               type: getByRole
               value: "link, { name: 'Kids' }"
+          - name: womenSubCategory
+            locator:
+              type: getByRole
+              value: 'link'
+          - name: menSubCategory
+            locator:
+              type: getByRole
+              value: 'link'
       - type: menu
         name: brands
         title:
@@ -91,7 +109,7 @@ regions:
           - name: emailInput
             locator:
               type: getByPlaceholder
-              value: "Your email address"
+              value: 'Your email address'
           - name: subscribeBtn
             locator:
               type: getByRole

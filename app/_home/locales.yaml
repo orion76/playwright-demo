@@ -1,28 +1,38 @@
 header:
   nav:
-    home: { en: "Home", he: "Home" }
-    products: { en: "Products", he: "Products" }
-    cart: { en: "Cart", he: "Cart" }
-    signupLogin: { en: "Signup / Login", he: "Signup / Login" }
-    testCases: { en: "Test Cases", he: "Test Cases" }
-    apiTesting: { en: "API Testing", he: "API Testing" }
-    videoTutorials: { en: "Video Tutorials", he: "Video Tutorials" }
-    contactUs: { en: "Contact us", he: "Contact us" }
-    logout: { en: "Logout", he: "Logout" }
-    deleteAccount: { en: "Delete Account", he: "Delete Account" }
+    home: { en: 'Home' }
+    products: { en: 'Products' }
+    cart: { en: 'Cart' }
+    signupLogin: { en: 'Signup / Login' }
+    testCases: { en: 'Test Cases' }
+    apiTesting: { en: 'API Testing' }
+    videoTutorials: { en: 'Video Tutorials' }
+    contactUs: { en: 'Contact us' }
+    logout: { en: 'Logout' }
+    deleteAccount: { en: 'Delete Account' }
+    loggedInAs: { en: 'Logged in as' }
 sidebar:
   category:
-    title: { en: "Category", he: "Category" }
-    women: { en: "Women", he: "Women" }
-    men: { en: "Men", he: "Men" }
-    kids: { en: "Kids", he: "Kids" }
+    title: { en: 'Category' }
+    women: { en: 'Women' }
+    men: { en: 'Men' }
+    kids: { en: 'Kids' }
+    womenSubCategory: { en: 'Dress' }
+    menSubCategory: { en: 'Tshirts' }
   brands:
-    title: { en: "Brands", he: "Brands" }
+    title: { en: 'Brands' }
 main:
   hero:
-    title: { en: "AutomationExercise", he: "AutomationExercise" }
+    title: { en: 'AutomationExercise' }
+  featuresItems:
+    title: { en: 'Features Items' }
+  recommendedItems:
+    title: { en: 'recommended items' }
+    addToCartBtn: { en: 'Add to cart' }
+    viewCartLink: { en: 'View Cart' }
 footer:
   subscription:
-    title: { en: "Subscription", he: "Subscription" }
-    emailInput: { en: "Your email address", he: "Your email address" }
-    subscribeBtn: { en: "", he: "" }
+    title: { en: 'Subscription' }
+    emailInput: { en: 'Your email address' }
+    subscribeBtn: { en: '' }
+    scrollUpArrow: { en: '' }

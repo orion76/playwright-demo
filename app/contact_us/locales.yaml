@@ -1,8 +1,8 @@
 main:
   contactForm:
-    title: { en: "Get In Touch", he: "Get In Touch" }
-    nameInput: { en: "Name", he: "Name" }
-    emailInput: { en: "Email", he: "Email" }
-    subjectInput: { en: "Subject", he: "Subject" }
-    messageInput: { en: "Your Message Here", he: "Your Message Here" }
-    submitBtn: { en: "Submit", he: "Submit" }
+    title: { en: 'Get In Touch' }
+    nameInput: { en: 'Name' }
+    emailInput: { en: 'Email' }
+    subjectInput: { en: 'Subject' }
+    messageInput: { en: 'Your Message Here' }
+    submitBtn: { en: 'Submit' }

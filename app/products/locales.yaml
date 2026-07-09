@@ -1,8 +1,16 @@
 sidebar:
   brands:
-    title: { en: "Brands", he: "Brands" }
+    title: { en: 'Brands' }
+    polo: { en: 'Polo' }
+    hm: { en: 'H&M' }
 main:
   search:
-    searchInput: { en: "Search Product", he: "Search Product" }
+    searchInput: { en: 'Search Product' }
   productList:
-    title: { en: "All Products", he: "All Products" }
+    title: { en: 'All Products' }
+    addToCartBtn: { en: 'Add to cart' }
+    continueShopping: { en: 'Continue Shopping' }
+    viewCartInModal: { en: 'View Cart' }
+    viewProductLink: { en: 'View Product' }
+    categoryTitle: { en: 'Category' }
+    searchedTitle: { en: 'Searched Products' }

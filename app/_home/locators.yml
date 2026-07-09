@@ -30,6 +30,8 @@ header:
     logout:
       by: role
       role: link
+    loggedInAs:
+      by: text
 main:
   hero:
     title:
@@ -39,20 +41,35 @@ main:
     title:
       by: role
       role: heading
+  recommendedItems:
+    title:
+      by: text
+    addToCartBtn:
+      by: css
+      selector: '.recommended_items a.add-to-cart'
+    viewCartLink:
+      by: role
+      role: link
 sidebar:
   category:
     title:
       by: role
       role: heading
     women:
-      by: role
-      role: link
+      by: css
+      selector: "#accordian a[href='#Women']"
     men:
-      by: role
-      role: link
+      by: css
+      selector: "#accordian a[href='#Men']"
     kids:
       by: role
       role: link
+    womenSubCategory:
+      by: css
+      selector: '#Women a'
+    menSubCategory:
+      by: css
+      selector: '#Men a'
   brands:
     title:
       by: role
@@ -67,3 +84,9 @@ footer:
     subscribeBtn:
       by: role
       role: button
+    successMsg:
+      by: css
+      selector: '#success-subscribe'
+    scrollUpArrow:
+      by: role
+      role: link

@@ -1,4 +1,4 @@
-name: "Contact Us"
+name: 'Contact Us'
 regions:
   - name: main
     blocks:
@@ -32,3 +32,11 @@ regions:
             locator:
               type: getByRole
               value: "button, { name: 'Submit' }"
+          - name: successMsg
+            locator:
+              type: getByText
+              value: 'Success!'
+          - name: homeLink
+            locator:
+              type: getByRole
+              value: "link, { name: 'Home' }"

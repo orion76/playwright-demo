@@ -1,4 +1,4 @@
-name: "Account Deleted"
+name: 'Account Deleted'
 regions:
   - name: main
     blocks:
@@ -9,7 +9,7 @@ regions:
           value: "heading, { name: 'Account Deleted!' }"
         content:
           type: getByText
-          value: "Your account has been permanently deleted!"
+          value: 'Your account has been permanently deleted!'
         fields:
           - name: continueBtn
             locator:

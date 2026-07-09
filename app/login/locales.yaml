@@ -1,11 +1,13 @@
 main:
   signupForm:
-    nameInput: { en: "Name", he: "Name" }
-    emailInput: { en: "Email Address", he: "Email Address" }
-    signupBtn: { en: "Signup", he: "Signup" }
-    title: { en: "New User Signup!", he: "New User Signup!" }
+    nameInput: { en: 'Name' }
+    emailInput: { en: 'Email Address' }
+    signupBtn: { en: 'Signup' }
+    errorMsg: { en: 'Email Address already exist!' }
+    title: { en: 'New User Signup!' }
   loginForm:
-    title: { en: "Login to your account", he: "Login to your account" }
-    emailInput: { en: "Email Address", he: "Email Address" }
-    passwordInput: { en: "Password", he: "Password" }
-    loginBtn: { en: "Login", he: "Login" }
+    title: { en: 'Login to your account' }
+    emailInput: { en: 'Email Address' }
+    passwordInput: { en: 'Password' }
+    loginBtn: { en: 'Login' }
+    errorMsg: { en: 'Your email or password is incorrect!' }

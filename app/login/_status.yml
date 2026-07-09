@@ -2,9 +2,7 @@ login-correct:
   status: base_test_generated
 login-incorrect:
   status: base_test_generated
-logout:
-  status: planned
-register-existing-email:
+login-existing-email:
   status: base_test_generated
 place-order-register-before-checkout:
   status: base_test_generated

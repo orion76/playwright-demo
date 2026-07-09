@@ -1,4 +1,4 @@
-name: "Signup — Enter Account Information"
+name: 'Signup — Enter Account Information'
 regions:
   - name: main
     blocks:
@@ -65,7 +65,7 @@ regions:
           - name: companyInput
             locator:
               type: getByPlaceholder
-              value: "Company"
+              value: 'Company'
           - name: addressInput
             locator:
               type: getByRole
@@ -73,7 +73,7 @@ regions:
           - name: address2Input
             locator:
               type: getByPlaceholder
-              value: "Address 2"
+              value: 'Address 2'
           - name: countrySelect
             locator:
               type: getByRole

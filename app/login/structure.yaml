@@ -1,4 +1,4 @@
-name: "Signup / Login"
+name: 'Signup / Login'
 regions:
   - name: main
     blocks:
@@ -11,11 +11,11 @@ regions:
           - name: emailInput
             locator:
               type: getByPlaceholder
-              value: "Email Address"
+              value: 'Email Address'
           - name: passwordInput
             locator:
               type: getByPlaceholder
-              value: "Password"
+              value: 'Password'
           - name: loginBtn
             locator:
               type: getByRole
@@ -29,11 +29,11 @@ regions:
           - name: nameInput
             locator:
               type: getByPlaceholder
-              value: "Name"
+              value: 'Name'
           - name: emailInput
             locator:
               type: getByPlaceholder
-              value: "Email Address"
+              value: 'Email Address'
           - name: signupBtn
             locator:
               type: getByRole

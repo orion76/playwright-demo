@@ -1,12 +1,14 @@
-import { test, VIEWPORTS } from "@src/fixtures/test";
-import { testVerifyProductQuantity } from "./shared/verify-product-quantity";
+import { test, VIEWPORTS } from '@src/fixtures/test';
+import { testVerifyProductQuantity } from './shared/verify-product-quantity';
 
 test.use({ viewport: VIEWPORTS.desktop });
-test("SPEC: product_details — Verify Product Quantity", async ({ page }) => {
-  test.info().annotations.push(
-    { type: "feature", description: "Product Details" },
-    { type: "story", description: "Verify product quantity in cart" },
-    { type: "severity", description: "normal" },
-  );
-  await testVerifyProductQuantity(page, { viewport: "desktop", role: "guest", lang: "en" });
+test('SPEC: product_details — Verify Product Quantity', async ({ page }) => {
+  test
+    .info()
+    .annotations.push(
+      { type: 'feature', description: 'Product Details' },
+      { type: 'story', description: 'Verify product quantity in cart' },
+      { type: 'severity', description: 'normal' },
+    );
+  await testVerifyProductQuantity(page, { viewport: 'desktop', role: 'guest', lang: 'en' });
 });

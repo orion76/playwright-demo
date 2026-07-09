@@ -1,9 +1,15 @@
-import { test, VIEWPORTS } from "@src/fixtures/test";
-import { testRemoveProduct } from "./shared/remove-product";
+import { test, VIEWPORTS } from '@src/fixtures/test';
+import { testRemoveProduct } from './shared/remove-product';
 
 test.use({ viewport: VIEWPORTS.desktop });
-test.use({ storageState: "auth/persistent-user.json" });
 
-test("SPEC: test", async ({ page }) => {
-  await testRemoveProduct(page, { viewport: "desktop", role: "registered", lang: "en" });
+test('SPEC: view_cart — Remove Product', async ({ page }) => {
+  test
+    .info()
+    .annotations.push(
+      { type: 'feature', description: 'Cart Management' },
+      { type: 'story', description: 'Remove product from cart' },
+      { type: 'severity', description: 'normal' },
+    );
+  await testRemoveProduct(page, { viewport: 'desktop', role: 'guest', lang: 'en' });
 });

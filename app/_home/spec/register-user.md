@@ -39,8 +39,6 @@
 
 [header.nav]
 27. **Ожидание:** элемент "Logged in as $userName" виден
-28. Нажать `deleteAccount`
 
-[/]
-29. **Ожидание:** заголовок "Account Deleted!" виден
-30. Нажать `continueBtn`
+[cleanup]
+28. Удалить аккаунт через API

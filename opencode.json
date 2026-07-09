@@ -4,8 +4,9 @@
     "playwright": {
       "type": "local",
       "command": [
-        "npx",
-        "playwright-mcp"
+        "bash",
+        "-c",
+        "npx playwright-mcp 2>>/tmp/playwright-mcp.log"
       ],
       "enabled": true
     }

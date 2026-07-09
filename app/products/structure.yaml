@@ -1,5 +1,12 @@
-name: "All Products"
+name: 'All Products'
 regions:
+  - name: sidebar
+    blocks:
+      - type: menu
+        name: brands
+        title:
+          type: getByRole
+          value: "heading, { name: 'Brands' }"
   - name: main
     blocks:
       - type: form
@@ -8,7 +15,7 @@ regions:
           - name: searchInput
             locator:
               type: getByPlaceholder
-              value: "Search Product"
+              value: 'Search Product'
           - name: searchBtn
             locator:
               type: getByRole
@@ -18,3 +25,20 @@ regions:
         title:
           type: getByRole
           value: "heading, { name: 'All Products' }"
+        fields:
+          - name: categoryTitle
+            locator:
+              type: getByRole
+              value: 'heading'
+          - name: addToCartBtn
+            locator:
+              type: getByRole
+              value: "link, { name: 'Add to cart' }"
+          - name: continueShopping
+            locator:
+              type: getByRole
+              value: "button, { name: 'Continue Shopping' }"
+          - name: viewCartInModal
+            locator:
+              type: getByRole
+              value: "link, { name: 'View Cart' }"

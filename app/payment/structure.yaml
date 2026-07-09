@@ -1,4 +1,4 @@
-name: "Payment"
+name: 'Payment'
 regions:
   - name: main
     blocks:

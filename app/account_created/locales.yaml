@@ -1,4 +1,4 @@
 main:
   success:
-    title: { en: "Account Created!", he: "Account Created!" }
-    continueBtn: { en: "Continue", he: "Continue" }
+    title: { en: 'Account Created!' }
+    continueBtn: { en: 'Continue' }

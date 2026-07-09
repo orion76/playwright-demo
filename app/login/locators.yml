@@ -12,6 +12,8 @@ main:
     signupBtn:
       by: css
       selector: "button[data-qa='signup-button']"
+    errorMsg:
+      by: text
   loginForm:
     title:
       by: role
@@ -25,3 +27,5 @@ main:
     loginBtn:
       by: css
       selector: "button[data-qa='login-button']"
+    errorMsg:
+      by: text

@@ -1,4 +1,4 @@
-name: "Shopping Cart"
+name: 'Shopping Cart'
 regions:
   - name: main
     blocks:
@@ -17,3 +17,27 @@ regions:
             locator:
               type: getByRole
               value: "link, { name: 'here' }"
+          - name: cartTable
+            locator:
+              type: getByRole
+              value: 'table'
+          - name: deleteItem
+            locator:
+              type: getByRole
+              value: "link, { name: 'Delete' }"
+  - name: footer
+    blocks:
+      - type: form
+        name: subscription
+        title:
+          type: getByRole
+          value: "heading, { name: 'Subscription' }"
+        fields:
+          - name: emailInput
+            locator:
+              type: getByPlaceholder
+              value: 'Your email address'
+          - name: subscribeBtn
+            locator:
+              type: getByRole
+              value: "button, { name: '' }"

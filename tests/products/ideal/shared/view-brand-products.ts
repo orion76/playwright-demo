@@ -1,6 +1,6 @@
-import { Page, expect } from "@playwright/test";
-import { initPage } from "@src/pages/init";
-import type { UViewport } from "@src/types";
+import { test, Page, expect } from '@playwright/test';
+import { initPage } from '@src/pages/init';
+import type { UViewport } from '@src/types';
 
 export interface ScenarioOpts {
   viewport: UViewport;
@@ -9,10 +9,27 @@ export interface ScenarioOpts {
 }
 
 export async function testViewBrandProducts(page: Page, opts: ScenarioOpts) {
-  const po = initPage(page, "products", opts.viewport);
+  const po = initPage(page, 'products', opts.viewport);
   await po.navigate();
-  await expect(po.region("sidebar").block("brands").element("title")).toBeVisible();
 
-  await page.getByRole("link", { name: "Polo" }).first().click();
-  await page.waitForURL("**/brand_products/**");
+  await test.step('Expect Brands title visible', async () => {
+    const brands = po.region('sidebar').block('brands');
+    await expect(brands.element('title')).toBeVisible();
+  });
+
+  await test.step('Click first brand and verify', async () => {
+    const brands = po.region('sidebar').block('brands');
+    await brands.element('polo').click();
+    await page.waitForURL('**/brand_products/**');
+    const list = po.region('main').block('productList');
+    await expect(list.element('addToCartBtn').first()).toBeVisible();
+  });
+
+  await test.step('Click second brand and verify', async () => {
+    const brands = po.region('sidebar').block('brands');
+    await brands.element('hm').click();
+    await page.waitForURL('**/brand_products/**');
+    const list = po.region('main').block('productList');
+    await expect(list.element('addToCartBtn').first()).toBeVisible();
+  });
 }

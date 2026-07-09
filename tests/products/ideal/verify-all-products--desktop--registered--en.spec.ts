@@ -1,9 +1,9 @@
-import { test, VIEWPORTS } from "@src/fixtures/test";
-import { testVerifyAllProducts } from "./shared/verify-all-products";
+import { test, VIEWPORTS } from '@src/fixtures/test';
+import { testVerifyAllProducts } from './shared/verify-all-products';
 
 test.use({ viewport: VIEWPORTS.desktop });
-test.use({ storageState: "auth/persistent-user.json" });
+test.use({ storageState: 'auth/persistent-user.json' });
 
-test("SPEC: test", async ({ page }) => {
-  await testVerifyAllProducts(page, { viewport: "desktop", role: "registered", lang: "en" });
+test('SPEC: test', async ({ page }) => {
+  await testVerifyAllProducts(page, { viewport: 'desktop', role: 'registered', lang: 'en' });
 });

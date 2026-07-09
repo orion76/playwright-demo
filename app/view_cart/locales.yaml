@@ -1,4 +1,13 @@
 main:
   cartContent:
-    checkoutBtn: { en: "Proceed To Checkout", he: "Proceed To Checkout" }
-    emptyCartLink: { en: "here", he: "here" }
+    checkoutBtn: { en: 'Proceed To Checkout' }
+    emptyCartLink: { en: 'here' }
+    cartTable: { en: 'Cart' }
+    deleteItem: { en: 'Delete' }
+    registerLoginBtn: { en: 'Register / Login' }
+footer:
+  subscription:
+    title: { en: 'Subscription' }
+    emailInput: { en: 'Your email address' }
+    subscribeBtn: { en: '' }
+    successMsg: { en: 'Success' }

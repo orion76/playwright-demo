@@ -3,15 +3,37 @@ sidebar:
     title:
       by: role
       role: heading
+    polo:
+      by: role
+      role: link
+    hm:
+      by: role
+      role: link
 main:
   search:
     searchInput:
       by: css
-      selector: "#search_product"
+      selector: '#search_product'
     searchBtn:
       by: css
-      selector: "#submit_search"
+      selector: '#submit_search'
   productList:
     title:
       by: role
       role: heading
+    categoryTitle:
+      by: text
+    searchedTitle:
+      by: text
+    addToCartBtn:
+      by: css
+      selector: '.product-image-wrapper a.add-to-cart'
+    continueShopping:
+      by: role
+      role: button
+    viewCartInModal:
+      by: role
+      role: link
+    viewProductLink:
+      by: role
+      role: link

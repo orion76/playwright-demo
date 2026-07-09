@@ -1,4 +1,4 @@
-name: "Account Created"
+name: 'Account Created'
 regions:
   - name: main
     blocks:
@@ -9,7 +9,7 @@ regions:
           value: "heading, { name: 'Account Created!' }"
         content:
           type: getByText
-          value: "Congratulations! Your new account has been successfully created!"
+          value: 'Congratulations! Your new account has been successfully created!'
         fields:
           - name: continueBtn
             locator:

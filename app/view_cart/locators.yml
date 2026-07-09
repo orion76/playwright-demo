@@ -1,8 +1,36 @@
 main:
   cartContent:
     checkoutBtn:
-      by: role
-      role: link
+      by: css
+      selector: 'a.btn.check_out'
     emptyCartLink:
       by: role
       role: link
+    cartTable:
+      by: css
+      selector: '#cart_info_table'
+    cartRows:
+      by: css
+      selector: '#cart_info_table tbody tr'
+    deleteItem:
+      by: css
+      selector: '.cart_delete a'
+    registerLoginBtn:
+      by: role
+      role: link
+    quantityCell:
+      by: css
+      selector: '#cart_info_table tbody tr td.cart_quantity'
+footer:
+  subscription:
+    title:
+      by: role
+      role: heading
+    emailInput:
+      by: placeholder
+    subscribeBtn:
+      by: role
+      role: button
+    successMsg:
+      by: css
+      selector: '#success-subscribe'

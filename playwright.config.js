@@ -11,10 +11,11 @@ module.exports = defineConfig({
   expect: { timeout: 10000 },
   globalSetup: './src/setup/global-setup.ts',
   retries: 2,
-  workers: 2,
+  workers: 4,
   reporter: [
     ['list'],
     ['html', { outputFolder: 'playwright-report', open: 'never' }],
+    ['json', { outputFile: 'playwright-report/results.json' }],
     ['allure-playwright', { outputFolder: 'allure-results' }],
   ],
   use: {

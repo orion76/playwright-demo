@@ -1,4 +1,4 @@
 main:
   success:
-    title: { en: "Account Deleted!", he: "Account Deleted!" }
-    continueBtn: { en: "Continue", he: "Continue" }
+    title: { en: 'Account Deleted!' }
+    continueBtn: { en: 'Continue' }

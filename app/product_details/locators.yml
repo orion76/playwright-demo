@@ -13,9 +13,15 @@ main:
       by: text
     brand:
       by: text
+    quantityInput:
+      by: css
+      selector: 'input#quantity'
     addToCartBtn:
       by: role
       role: button
+    viewCartLink:
+      by: role
+      role: link
   review:
     title:
       by: text
@@ -28,3 +34,5 @@ main:
     submitBtn:
       by: role
       role: button
+    successMsg:
+      by: text
